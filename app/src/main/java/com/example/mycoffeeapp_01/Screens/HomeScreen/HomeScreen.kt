@@ -1,0 +1,17 @@
+package com.example.mycoffeeapp_01.Screens.HomeScreen
+
+import androidx.compose.material3.Scaffold
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.tooling.preview.Preview
+import com.example.mycoffeeapp_01.Screens.UiComponents.BottomNavBar
+
+@Preview(showBackground = true, showSystemUi = true)
+@Composable
+fun HomeScreen() {
+
+    Scaffold(
+        bottomBar = {
+            BottomNavBar()
+        }
+    ) { }
+}
