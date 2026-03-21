@@ -1,5 +1,6 @@
 package com.example.mycoffeeapp_01.Screens.HomeScreen
 
+import androidx.compose.foundation.Image
 import androidx.compose.material3.Icon
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
@@ -24,8 +25,10 @@ import androidx.compose.ui.unit.dp
 import com.example.mycoffeeapp_01.Screens.UiComponents.MyBottomNavBar
 import androidx.compose.material3.Text
 import androidx.compose.ui.Alignment
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
+import com.example.mycoffeeapp_01.R
 
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
@@ -79,10 +82,18 @@ fun HomeScreen() {
                 )
             }
 
-            Spacer(modifier = Modifier.height(40.dp))
-
+            Spacer(modifier = Modifier.height(30.dp))
 
             MySearchBar()
+
+            Spacer(modifier = Modifier.height(40.dp))
+
+            Image(
+                painter = painterResource(R.drawable.banner_1),
+                contentDescription = "Home Banner"
+            )
+
+
         }
     }
 }
