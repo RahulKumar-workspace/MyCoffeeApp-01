@@ -33,17 +33,18 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.example.mycoffeeapp_01.Model.Product
 import com.example.mycoffeeapp_01.R
 import com.example.mycoffeeapp_01.ui.theme.IvoryWhite
 import com.example.mycoffeeapp_01.ui.theme.LightBrown
 
-@Preview(showBackground = true, showSystemUi = false)
 @Composable
-fun ProductCard(modifier: Modifier = Modifier) {
+fun ProductCard(product: Product,
+                modifier: Modifier = Modifier) {
 
     Card(
-        modifier = Modifier
-            .width(300.dp)
+        modifier = modifier
+            .fillMaxWidth()
             .padding(8.dp),
         shape = RoundedCornerShape(16.dp),
 
@@ -54,7 +55,7 @@ fun ProductCard(modifier: Modifier = Modifier) {
             Box(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .height(250.dp)
+                    .height(160.dp)
             ) {
                 Image(
                     painter = painterResource(R.drawable.coffee_1),
@@ -69,7 +70,7 @@ fun ProductCard(modifier: Modifier = Modifier) {
             Spacer(modifier = Modifier.height(8.dp))
 
             Text(
-                text = "Coffee Name",
+                text = product.name,
                 style = typography.titleMedium.copy(
                     color = Color.Black, fontWeight = FontWeight.SemiBold
                 )
@@ -78,7 +79,7 @@ fun ProductCard(modifier: Modifier = Modifier) {
             Spacer(modifier = Modifier.height(4.dp))
 
             Text(
-                text = "Coffee Description",
+                text = product.description,
                 style = typography.bodySmall.copy(
                     color = Color.Gray,
                 ),
@@ -94,7 +95,7 @@ fun ProductCard(modifier: Modifier = Modifier) {
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 Text(
-                    text = "Product Prict",
+                    text = "${product.price}",
                     style = typography.titleMedium.copy(
                         fontWeight = FontWeight.Bold,
                         color = LightBrown

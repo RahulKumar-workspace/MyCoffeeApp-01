@@ -12,6 +12,8 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowDropDown
 import androidx.compose.material.icons.filled.KeyboardArrowDown
@@ -33,7 +35,9 @@ import com.example.mycoffeeapp_01.R
 
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
-fun HomeScreen() {
+fun HomeScreen(
+
+) {
 
     var location = "Jalandhar RD, Palarivttom"
 
@@ -59,9 +63,11 @@ fun HomeScreen() {
         Column(
             modifier = Modifier
                 .fillMaxSize()
+                .verticalScroll(rememberScrollState())
                 .padding(16.dp)
                 .padding(innerPadding)
-        ) {
+        )
+        {
             Text(
                 text = "Location",
                 color = Color.Gray,
@@ -114,7 +120,7 @@ fun HomeScreen() {
                 Product(id = 7, name = "Iced Mocha", description = "Refreshing and rich", price = 4.70, imageRes = R.drawable.coffee_4)
             )
 
-
+            ProductsGrid(products = products)
         }
     }
 }
