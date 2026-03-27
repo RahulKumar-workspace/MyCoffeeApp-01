@@ -18,6 +18,7 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
+import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme.typography
@@ -37,6 +38,7 @@ import com.example.mycoffeeapp_01.Model.Product
 import com.example.mycoffeeapp_01.R
 import com.example.mycoffeeapp_01.ui.theme.IvoryWhite
 import com.example.mycoffeeapp_01.ui.theme.LightBrown
+import com.example.mycoffeeapp_01.ui.theme.LightGray
 
 @Composable
 fun ProductCard(product: Product,
@@ -47,7 +49,9 @@ fun ProductCard(product: Product,
             .fillMaxWidth()
             .padding(8.dp),
         shape = RoundedCornerShape(16.dp),
-
+        colors = CardDefaults.cardColors(
+            containerColor = LightGray.copy(alpha = .6f)
+        )
         ) {
         Column(
             modifier = Modifier.padding(8.dp)
